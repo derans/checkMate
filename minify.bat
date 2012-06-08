@@ -1,0 +1,1 @@
+uglifyjs -o jquery.checkmate.min.js jquery.checkmate.js
