@@ -1,58 +1,55 @@
-(function($) {
-    $.fn.sexyChecks = function(options) {
-	var defaults = {
-		class: 'Selected-Checkbox',
-		testMode: false
-		};
+(function ($) {
+    $.fn.checkMate = function (options) {
+        var defaults = {
+            class: 'Selected-Checkbox',
+            testMode: false
+        };
 
-	var options = $.extend(defaults, options);
-	var selector = this;		
+        var options = $.extend(defaults, options);
+        var selector = this;
 
-	return this.each(function() {
-		var id = $(this).attr("for");
-		var className =	$('#'+id).attr("class");
+        return this.each(function () {
+            var checkboxId = $(this).attr("for");
+            var checkbox = $('#' + checkboxId);
+            var label = $(this);
 
-		$(this).addClass(className);
+            if (options.testMode) {
+                checkbox.show();
+            } else {
+                checkbox.hide();
+            }
 
-		if (options.testMode)
-		{
-			$('#'+id).show();
-		} else {
-			$('#'+id).hide();
-		}
+            if (checkbox.is(":checked")) {
+                checkbox.attr("checked", true);
+                label.addClass(options.class);
+            } else {
+                checkbox.removeAttr("checked");
+                label.removeClass(options.class);
+            }
 
-		if ($('#'+id).is(":checked"))
-		{
-			$('#'+id).attr("checked", true);
-			$(this).addClass(options.class);
-		} else {
-			$('#'+id).removeAttr("checked");
-			$(this).removeClass(options.class);
-		}
+            label.click(function (e) {
+                e.preventDefault();
+                var checkboxId = $(this).attr("for");
+                var checkbox = $('#' + checkboxId);
+                var label = $(this);
 
-		$(this).click(function(e){
-			e.preventDefault();
-			var id = $(this).attr("for");
+                if (checkbox.is(":radio")) {
+                    var groupName = checkbox.attr("name");
+                    $('input:radio[name="' + groupName + '"]').each(function () {
+                        var labelId = $(this).attr("id");
+                        $('label[for="' + labelId + '"]').removeClass(options.class);
+                        $(this).removeAttr("checked");
+                    });
+                }
 
-			if ($('#'+id).is(":radio"))
-			{
-				var groupName = $('#'+id).attr("name");
-				$('input:radio[name="'+groupName+'"]').each(function(){
-					var labelId = $(this).attr("id");
-					$('label[for="'+labelId+'"]').removeClass(options.class);
-					$(this).removeAttr("checked");
-				});
-			}
-
-			if ($('#'+id).is(":checked"))
-			{
-				$('#'+id).removeAttr("checked");
-				$(this).removeClass(options.class);
-			} else {
-				$('#'+id).attr("checked", true);
-				$(this).addClass(options.class);
-			}
-		});
-	});
-	};
+                if (checkbox.is(":checked")) {
+                    checkbox.removeAttr("checked");
+                    label.removeClass(options.class);
+                } else {
+                    checkbox.attr("checked", true);
+                    label.addClass(options.class);
+                }
+            });
+        });
+    };
 })(jQuery);

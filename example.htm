@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+.Freshman, .Sophomore, .Junior, .Senior
+{
+	border: solid 1px #ccc;
+	display:block; 
+	width:73px; 
+	height:60px; 
+	background-color: transparent;
+	background-repeat:no-repeat;
+	cursor: pointer; 
+	text-indent: -9999px;
+	overflow: hidden;
+	line-height: 0;
+	font-size: 0;
+	margin: 0 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+}
+
+.Freshman:hover, .Sophomore:hover, .Junior:hover, .Senior:hover
+{background-color: #E6E7D1	}
+
+.Freshman {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAA8CAMAAAAdQmecAAAAA3NCSVQICAjb4U/gAAAB71BMVEX///+M3nyL13uE1nV9z3B6zW1xxWVwwGRrvWFovF5ouF1jtltfsVZAlDw3jDI6hjchZCBwwGQSkQ4GiQMEiAEAAACE0XZwwGQGhgMQeA8hZCBwwGQomyIEhwEKhQgGhgMQLw94yGt1xWsRig8GhgMGiQMNhAoKhQghZCBKskEXkhMEhwEKhQghZCBBqzovnSkSkQ4GiQMKhQgGhgMGiQMEiAEhZCA4pjAKiggEiAEEhwEKhQghZCAhkxsKiggGiQMEhwEhZCAkmR8VjRENjAoGiQMEhwEhZCAsnyUSkQ4EiAEEhwEGhgMRgg4snyUkmR8SkQ4GiQMEiAEGhgMEhwGu8Jyj7ZOl6pSc5IyW5oWd4I6U3nuT3ISM3nyQ14GO14KL13uE1nWG03mE0XaG0Hp9z3B6zW13ymt4yGt1xWtxxWVwwGRqw19rvWFovF5ouF1hu1peu1VjtltetVeZmZlYtVFfsVZgsFdUtExWs09arlJWrFBKskFTrU1Kr0NXqFJKrTpRpktTpU9BqzpBqDtMokhRn0o9qDZMnUdJm0REmkE0oS1HlEEvnSksnyVAlDw9lDtEkj8omyIkmR9BjjwplyQ6jTghlR03jDIhkxs6hjcckxgXkhMSkQ4VjRENjAoKiggGiQMEiAEGhgMWfBShci91AAAApXRSTlMAERERERERERERERERERERESIiIiIiMzMzMzNERERERERVVVVVZmZmZnd3d3d3iIiIiIiImZmZqqqqqqqqu7u7u7vMzMzMzMzd3d3d3d3u7u7u7u7u//////////////////////////////////////////////////////////////////////////////////////////////////////////8k4o6HAAAACXBIWXMAAArwAAAK8AFCrDSYAAAAH3RFWHRTb2Z0d2FyZQBNYWNyb21lZGlhIEZpcmV3b3JrcyA4tWjSeAAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNi8wNS8xMr3GcgUAAAKXSURBVFiF7dD3W9NAHAbwcyDujQPcA/eeOEEF90SRKtWmNW2TmqQmbQoXGSmkJFgsJdhioYjgH+pdW4pFfPBSfvGx7/NckueSfJ73vgCUUso/nOVLy5eUlZWVr695dq4IZsW6zVVVe3Yfv3DjyWjrq/QGy9Dhq4/NQdM0ez++p142vejfb43Z1zD+Kcg6nS3NODabranrrBXnyHOTf9PiwLHb7bbXaDW3Xid3dt4fZN86aRTKRVGIsiPQ9oFcujQefOdlGY8bUxSmHOja4q8nhWpHGYZDyVAUauXISA7i023/xvAiz3G8D0leBlnYoWlnx0VCqaGNk0SB57kQw4gs5aJdNHLcblf3STJoY5qBsigiC4phkWO9qBTtRmNzfd5GJtV0C4osy5IkRsIMnjnq42FYH0ubi8ike0HYDhUFynrEx3rcbo8HOxzH8ncWkkkTflVVFB1GDVkOCYLA+RDD8TzTe4iw04SoqapqROOKLPl5Hk1MQkvk+EebyKCclIpKoiRBqEB8UgglbvDEYkLpu6Rp6lBKlmSoaoaha7qua2HBvLmSEMKSGk3pEcOIDyUSiYFYLNanhUZurSKFwNOgaqSiKuoTG0gkMpYGx66tJoZAfUckZSjtWh9yhrHU19kzfnkNOQRO9cfjaEIZaDgRMzrbkw92WHAA2PpjuM0vwLAaiYQ7odIz1njGkgPA+dsP76bTyeTXL8mRycnG2i0WHXCw7hgAC5btra4+ffTAWqsKSmXdlWJ+L6hUOT8QqNhV8UuKo+YDKaWU3xOw8AvO/EhE23NLAYCL5drhW65pIPc8tQ3A7EcA+TfZj7IrAAqfp1bhzp87gfzIZqr5lX37V9J0z1mkGTtzSvmxFSVNz9TS6Ur5b/MTGPMdrAwxQXsAAAAASUVORK5CYII=)}
+
+.Sophomore {background-image: url(data:image/gif;base64,R0lGODlhSQA8AOYAAF98ApmZmZK+BNDaq5ewQoGoA4OcLbTFeaLUBHaaA+bsz26MDou1BKvfBaO3XpjGBHqZFe/z4G6QA9fev77MjYKVQoSnF32jA3mONq/AdaTWBZKkV6/kBYqpIWuMA8PQleTpz5XDBI+7BHidA3KVA4StBIykOo+nQKjbBdbftvT26bPpBXyYIcDSgZ2tZarBWp3NBG2MCZ2zVuru3HKPFYqjNbG+gd/owbHCdrbtBX+ZLcfTm6q8anqdCL3Jk9jjsWeHA5muTvb4756zWISeLuDnyHSUC+nu13aaBWaGA/L15tbiq+bm1rnKe4ytOpeuS3eTGqO3YH+dH+vv2o+sMbjHgbfKcb3OlNvluP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEHAFkALAAAAABJADwAAAf/gFmCg4SFhoeIiYqLjI2Oj5CRkpOUlZaXmJmam5ydnp+goaKjpKWmp6iYQipKSipZRzILUamRQhEKN1g/S1YvVBASDA0SU7WOFAQWPT0JzgUMIQgr1CM7x4oDRB4XDA8ICCgcHNTU4zklPNiHVVAJAhooGvPzKPYcDfkNKwxB64QTDCQIQQ8GuIPh9OnjIOLEP0FDgDCA8aAijIsXD9qzR6+BCBMPg0ioKKCkgAcYDWrkSI/Bk38pPDwQQbOmCJQXQ8Cgx3NnCQf/iDAYOrRmiYrR5qkEl7LEgXVHJIQoQbQo1W7RdB6kWBHBiBTrhkCjWpXBiBE4U158EKItDCRK/9axYFCirt0SztyqJWlSQIdX2GKIKEC4wIgSJEiQJdpXQM0QBVoIWSfxQuEEJCQUoFqzLFGaFo78kzjigmkgJKreXV1XQIImk9d5MGtaAhCyJQpcOMubN7QETgCvi8HANIkkvTNLWC4hceIRDCTUiP0PCoMCCVAXPsu8u4QLJTycoP6vRnEgCepewOx9eQLCQIY8JIRjxPLc65V3H7GZhIEb8xECAgCz0YSfaZbVVYAENGQQYCEuYKCDFEY051xiSSSxwAlFPFiIDxXYMIgQA3zwAQ4UXOPhISBUsMGKknxQAQgwRjLDBEfkqOOOOdZoCI86+ijkkEQWaSQkAawYwICSST7SZIBPZhHlIlP+U6UgTGKZpZZLErKllFl+KSaYXDbSpZeDJPlkk2timaabcEopJ5xnzmknlW26meeeb9rZJp9pMnllImy+Ceich/7ZZ5SDHsJonGouKimdfcp5qJ+MCOrlmZpCGmiemIIJapmZNHpknKemquqqrLbqKiiBAAA7)}
+
+.Junior {background-image: url(data:image/gif;base64,R0lGODlhSQA8ANUAAHx8AJmZmb29ANbWtYaGNKWlANbWALW1c7+/b6SkL5mZAO7u4LW1AMPDjMzMAN7eAJSUAOXlzq2tAJycM6ysXM/PqMXFAObmAJaWErKygIyMAJKSKqOjFKioVI2NEtvbt56ePp6eGfPz6aSkSaGhZMjInb29kt/fx+bm2fDwAIyMQYyMCsTElNfXqpKSHr6+eaenQKSkHpmZVsDAjJycBejo3IaGALCwaLa2WJ2dOJOTCPHx5pSUMd/fwPb27////yH5BAEHAD8ALAAAAABJADwAAAb/wJ9wSCwaj8ikcslsOp/QqHRKrVqv2Kx2y+16v+CweEwum89orE+024l+qM6Kko76FpHeZ9BC4BIYEAwPEDV1Tg0wITQ0Co4FDBYGFykpNCWHShU8GpCSBg8PF6OkoxI3mUcvHgoCBq+woKGzoRcMI6lEHxsKnwYOsa+0sxcCILlCHRoMDhbODtDAsbOwDwI5yCMQzgLdAhbRweIGt7kDGhYCDN7d4NDg48ASdKk8DPfr3hLOka/S/tEkHEiFAp0EfPcEHIQUCd6vZs4M0BiQqsPBgwgZ0CjgLlo0Z88U7EjlgoGEkyglOPrm8SM7ATHeZFohoIDNAjQkQFCAEd9L/28WCjTwkWrZzQIKIEA4mU9dxoQCOETIZYPBURuC8KXcelCAghdEi1q1qUEDRgk2GalVC0lBDpmpVoyFYGOt0rIalOqFBGFC2FwerCrAerOR3sMQCkjQAOJvrglWbfBEmxQCXrwKbNrogIzIARpKTyK9i3enYggbenQmEgHAMnVoj6bU4GHgaiIkCGxwoSMvYhs2VoA4cbuICRUZhviowILFgRmYih+JoEKGdCksVEy9DqXGABTgw4sHz93I+PDl06tfz769+zoBrgeY/15J/PpI7t//oX/+/v/08cfffmjoN4SBQiD434CpICjggw86GB+B8CV4oIUYSgjhIRpCqBjghRSa4R8R/nUIoIP4pajiiiy26KJ7QQAAOw==)}
+
+.Senior {background-image: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAA8CAMAAAAdQmecAAAAA3NCSVQICAjb4U/gAAAA1VBMVEX///9zOgBtNwBrNQBmMwBzOgBrNQBXKwB5PABtNwBrNQBmMwB9PwB5PABtNwBXKwCEQgBzOgBzOgBmMwCLRQB5PABzOgBmMwCORwCEQgB9PwB5PAB9PwB5PABmMwCORwB9PwBmMwCLRQB9PwBmMwCORwCEQgBmMwCaTACLRQCEQgB9PwCcTgCUSgCORwCEQgCZmZnweADtdgDmcwDgcADdbgDWawDQaADMZgDGYwC+XwC7XQC1WgCuVwCrVQClUgCcTgCaTACUSgCORwCLRQCEQgB9PwCENbFIAAAAR3RSTlMAERERESIiIjMzMzNEREREVVVmZnd3d3eIiIiImZmZqqqqu7u7zMzM3d3d3e7u7u7//////////////////////////////4CMN3EAAAAJcEhZcwAACvAAAArwAUKsNJgAAAAfdEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIDi1aNJ4AAAAFnRFWHRDcmVhdGlvbiBUaW1lADA2LzA1LzEyvcZyBQAAAgVJREFUWIXtlelu00AUhYcG0kJLaMNOWExTDITFJomX8cyd3bz/I/WO7URBAolx/Kvy98OaSJnP554bKYSMjIwMy2Ry4plMo+TtMZoHZxcXl5evPnz6afjWTnuLnl//0B7Bab5e/1Lzfpqr2ElGiyLbblrW8K5XnERXeZZ7smzbsOHLcM9spWhetDSqDNmwcFPkeEEpLcvWhCqfLmNxqGhpKa2QRpXnTSp8ZsHTzRxlnFUVQxVGK5qyfDiIAk0xZ5wzVAGlvK0LH5hPvAkTTS0F7lUMuOQMQyEl1laox2GmSHAB3sWVpE3nmAeLo6W+F2ZacRAgUKaU77z0GlwAo9WXkzBTzaQQQoHRAMAY91uscFYqngWaHJOo0sYK8GX5MZsVVN/PwkTEYT9SOuMNgGMKPynwSr8OjNSarAPUSKk6JNdxqAhNUppaKY0DWmetMUYrbuJJqIgkXKra4IDKqzxGgl3eDxaRGKTTQkjVeawW0kU9RGShrAEhu0BGCTCrWQ8PIY9+O9w6to3g1oRNFr08hLz//O1r27MxdZ0sH/b0kKc3L/1f09V8vngx79POjvObj8dc/yPS+TAicvrk9IDjVENIRu4cab9byHCvH0S1lzTRuoDp7jOe/j9x983uWntKyf4UFDftIqR/M4WIDq8cY9o1/q/pQvJ0v4K28QPtvvuRu8Qt106Cvb0kCQkAAAAASUVORK5CYII=)}
+
+.Selected-Checkbox {background-color: #E4F1F0}
+
+#classification_radio_wrapper label, #classification_checkbox_wrapper label, #classification_testmode_wrapper label {float: left;}
+#classification_radio_wrapper input, #classification_checkbox_wrapper input, #classification_testmode_wrapper input {display: none;}
+
+.title {clear: both; padding-top: 15px;}
+</style>
+</head>
+<body>
+
+<div class="title">Radio Button Example</div>
+<div id="classification_radio_wrapper">
+	<input type="radio" name="classificationRadio" id="Radio1" value="Freshman" checked /> <label for="Radio1" class="Freshman">Freshman</label>
+	<input type="radio" name="classificationRadio" id="Radio2" value="Sophomore" /> <label for="Radio2" class="Sophomore">Sophomore</label>
+	<input type="radio" name="classificationRadio" id="Radio3" value="Junior" /> <label for="Radio3" class="Junior">Junior</label>
+	<input type="radio" name="classificationRadio" id="Radio4" value="Senior" /> <label for="Radio4" class="Senior">Senior</label>
+</div>
+<div class="title">Checkbox Example</div>
+<div id="classification_checkbox_wrapper">
+	<input type="checkbox" name="classificationCheck" id="Check1" value="Freshman" /> <label for="Check1" class="Freshman">Freshman</label>
+	<input type="checkbox" name="classificationCheck" id="Check2" value="Sophomore" /> <label for="Check2" class="Sophomore">Sophomore</label>
+	<input type="checkbox" name="classificationCheck" id="Check3" value="Junior" checked /> <label for="Check3" class="Junior">Junior</label>
+	<input type="checkbox" name="classificationCheck" id="Check4" value="Senior" checked /> <label for="Check4" class="Senior">Senior</label>
+</div>
+<div class="title">Mix Example with Test Mode On</div>
+<div id="classification_testmode_wrapper">
+	<input type="radio" name="classificationTest" id="Test1" value="Freshman" /> <label for="Test1" class="Freshman">Freshman</label>
+	<input type="radio" name="classificationTest" id="Test2" value="Sophomore" /> <label for="Test2" class="Sophomore">Sophomore</label>
+	<input type="checkbox" name="classificationTestCheck" id="Test3" value="Junior" /> <label for="Test3" class="Junior">Junior</label>
+	<input type="checkbox" name="classificationTestCheck" id="Test4" value="Senior" /> <label for="Test4" class="Senior">Senior</label>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.checkmate.min.js"></script>
+
+<script type="text/javascript">
+    $('#classification_radio_wrapper label').checkMate();
+    $('#classification_checkbox_wrapper label').checkMate();
+    $('#classification_testmode_wrapper label').checkMate({ testMode: true });
+</script>
+</body>
+</html>
