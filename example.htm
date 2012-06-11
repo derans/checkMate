@@ -35,44 +35,53 @@
 .Senior {background-image: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAEkAAAA8CAMAAAAdQmecAAAAA3NCSVQICAjb4U/gAAAA1VBMVEX///9zOgBtNwBrNQBmMwBzOgBrNQBXKwB5PABtNwBrNQBmMwB9PwB5PABtNwBXKwCEQgBzOgBzOgBmMwCLRQB5PABzOgBmMwCORwCEQgB9PwB5PAB9PwB5PABmMwCORwB9PwBmMwCLRQB9PwBmMwCORwCEQgBmMwCaTACLRQCEQgB9PwCcTgCUSgCORwCEQgCZmZnweADtdgDmcwDgcADdbgDWawDQaADMZgDGYwC+XwC7XQC1WgCuVwCrVQClUgCcTgCaTACUSgCORwCLRQCEQgB9PwCENbFIAAAAR3RSTlMAERERESIiIjMzMzNEREREVVVmZnd3d3eIiIiImZmZqqqqu7u7zMzM3d3d3e7u7u7//////////////////////////////4CMN3EAAAAJcEhZcwAACvAAAArwAUKsNJgAAAAfdEVYdFNvZnR3YXJlAE1hY3JvbWVkaWEgRmlyZXdvcmtzIDi1aNJ4AAAAFnRFWHRDcmVhdGlvbiBUaW1lADA2LzA1LzEyvcZyBQAAAgVJREFUWIXtlelu00AUhYcG0kJLaMNOWExTDITFJomX8cyd3bz/I/WO7URBAolx/Kvy98OaSJnP554bKYSMjIwMy2Ry4plMo+TtMZoHZxcXl5evPnz6afjWTnuLnl//0B7Bab5e/1Lzfpqr2ElGiyLbblrW8K5XnERXeZZ7smzbsOHLcM9spWhetDSqDNmwcFPkeEEpLcvWhCqfLmNxqGhpKa2QRpXnTSp8ZsHTzRxlnFUVQxVGK5qyfDiIAk0xZ5wzVAGlvK0LH5hPvAkTTS0F7lUMuOQMQyEl1laox2GmSHAB3sWVpE3nmAeLo6W+F2ZacRAgUKaU77z0GlwAo9WXkzBTzaQQQoHRAMAY91uscFYqngWaHJOo0sYK8GX5MZsVVN/PwkTEYT9SOuMNgGMKPynwSr8OjNSarAPUSKk6JNdxqAhNUppaKY0DWmetMUYrbuJJqIgkXKra4IDKqzxGgl3eDxaRGKTTQkjVeawW0kU9RGShrAEhu0BGCTCrWQ8PIY9+O9w6to3g1oRNFr08hLz//O1r27MxdZ0sH/b0kKc3L/1f09V8vngx79POjvObj8dc/yPS+TAicvrk9IDjVENIRu4cab9byHCvH0S1lzTRuoDp7jOe/j9x983uWntKyf4UFDftIqR/M4WIDq8cY9o1/q/pQvJ0v4K28QPtvvuRu8Qt106Cvb0kCQkAAAAASUVORK5CYII=)}
 
 .Selected-Checkbox {background-color: #E4F1F0}
-
+.Checkbox-in-focus {
+	border: dotted 2px #999;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border-radius: 0; /* future proofing */
+	-khtml-border-radius: 0; /* for old Konqueror browsers */
+}
+#classification_radio_wrapper, #classification_checkbox_wrapper, #classification_testmode_wrapper {overflow: hidden}
 #classification_radio_wrapper label, #classification_checkbox_wrapper label, #classification_testmode_wrapper label {float: left;}
-#classification_radio_wrapper input, #classification_checkbox_wrapper input, #classification_testmode_wrapper input {display: none;}
-
-.title {clear: both; padding-top: 15px;}
+fieldset {margin: 20px 0}
 </style>
 </head>
 <body>
-
-<div class="title">Radio Button Example</div>
-<div id="classification_radio_wrapper">
+<p>On this form, you can tab through the checkboxes and use the spacebar to check/uncheck or the arrow keys to change selection on the radio buttons.</p>
+<p>This plugin has been initially tested on Chrome, Firefox, IE9, and JAWS screen reader.</p>
+<form>
+<fieldset  id="classification_radio_wrapper">
+<legend>Classification Radio Button Example</legend>
 	<input type="radio" name="classificationRadio" id="Radio1" value="Freshman" checked /> <label for="Radio1" class="Freshman">Freshman</label>
 	<input type="radio" name="classificationRadio" id="Radio2" value="Sophomore" /> <label for="Radio2" class="Sophomore">Sophomore</label>
 	<input type="radio" name="classificationRadio" id="Radio3" value="Junior" /> <label for="Radio3" class="Junior">Junior</label>
 	<input type="radio" name="classificationRadio" id="Radio4" value="Senior" /> <label for="Radio4" class="Senior">Senior</label>
-</div>
-<div class="title">Checkbox Example</div>
-<div id="classification_checkbox_wrapper">
+</fieldset>
+
+<fieldset id="classification_checkbox_wrapper">
+<legend>Classification Checkbox Example</legend>
 	<input type="checkbox" name="classificationCheck" id="Check1" value="Freshman" /> <label for="Check1" class="Freshman">Freshman</label>
 	<input type="checkbox" name="classificationCheck" id="Check2" value="Sophomore" /> <label for="Check2" class="Sophomore">Sophomore</label>
 	<input type="checkbox" name="classificationCheck" id="Check3" value="Junior" checked /> <label for="Check3" class="Junior">Junior</label>
 	<input type="checkbox" name="classificationCheck" id="Check4" value="Senior" checked /> <label for="Check4" class="Senior">Senior</label>
-</div>
-<div class="title">Mix Example with Test Mode On</div>
-<div id="classification_testmode_wrapper">
+</fieldset>
+
+<fieldset id="classification_testmode_wrapper">
+<legend>Classification Mix Example with Test Mode On</legend>
 	<input type="radio" name="classificationTest" id="Test1" value="Freshman" /> <label for="Test1" class="Freshman">Freshman</label>
 	<input type="radio" name="classificationTest" id="Test2" value="Sophomore" /> <label for="Test2" class="Sophomore">Sophomore</label>
 	<input type="checkbox" name="classificationTestCheck" id="Test3" value="Junior" /> <label for="Test3" class="Junior">Junior</label>
 	<input type="checkbox" name="classificationTestCheck" id="Test4" value="Senior" /> <label for="Test4" class="Senior">Senior</label>
-</div>
-
+</fieldset>
+</form>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.checkmate.min.js"></script>
+<script type="text/javascript" src="jquery.checkmate.js"></script>
 
 <script type="text/javascript">
     $('#classification_radio_wrapper label').checkMate();
     $('#classification_checkbox_wrapper label').checkMate();
-    $('#classification_testmode_wrapper label').checkMate({ testMode: true });
+    $('#classification_testmode_wrapper label').checkMate({testMode: true });
 </script>
 </body>
 </html>
