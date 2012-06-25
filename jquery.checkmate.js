@@ -3,7 +3,7 @@
         var defaults = {
             class: 'Selected-Checkbox',
             testMode: false,
-	    focusClass: 'Checkbox-in-focus',
+	    focusClass: 'Checkbox-in-focus'
         };
 
         var options = $.extend(defaults, options);
