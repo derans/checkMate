@@ -16,10 +16,10 @@
             var label = $(this);
 
             if (checkbox.is(":checked")) {
-                checkbox.attr("checked", true);
+                checkbox.prop("checked", true);
                 label.addClass(options.class);
             } else {
-                checkbox.removeAttr("checked");
+                checkbox.prop("checked", false);
                 label.removeClass(options.class);
             }
 
